@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+}
+
+header img {
+    width: 120px;
+    height: 200px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    font-family: poppins, sans-serif;
+    border-radius: 50px;
+    border: 2px solid rgb(255, 81, 0);
+    padding: 0.5rem 1rem;
+}
+
+header h2 {
+    font-size: 0.8rem;
+    color: rgb(255, 255, 255);
+    font-family: poppins, sans-serif;
+    padding: 0.5rem 1rem;
+    text-decoration: underline;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 81, 0);
+    font-family: poppins, sans-serif;
+
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgb(255, 81, 0);
+    color: rgb(255, 255, 255);
+
+    transform: scale(1.1);
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.info {
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    padding: 3rem;
+}
+
+
+.perfil {
+    display: flex;
+    align-items: center; 
+    gap: 30px; 
+    padding: 20px;
+    border: 2px solid rgb(255, 81, 0);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.foto img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+
+    border-radius: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 1rem;
+    margin-left: 20px;
+}
+
+.info h3 {
+    font-size: 2rem;
+}
+
+.info p {
+    font-size: 1.2rem;
+}
+
+main h2 {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 1rem;
+    font-family: poppins, sans-serif;
+    border-radius: 50px;
+    border: 2px solid rgb(255, 81, 0);
+    padding: .5rem 1rem;
+    text-align: center;
+}
+
+main p {
+    font-size: 0.8rem;
+    color: rgb(0, 0, 0);
+    font-family: poppins, sans-serif;
+    padding: 0.5rem;
+}
+
+main h3 {
+    font-size: 0.8rem;
+    color: rgb(0, 0, 0);
+    font-family: poppins, sans-serif;
+    padding: 0.5rem 1rem;
+    text-decoration: underline;
+}
+
+main img {
+    width: 10%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.bienvenida {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid rgb(255, 81, 0);
+    margin: 1rem 0;
+    border-radius: 20px;
+}
+
+.bienvenida h3 {
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    font-family: poppins, sans-serif;
+    padding: 0.5rem 1rem;
+    text-decoration: underline;
+}
+
+.bienvenida p {
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+    font-family: poppins, sans-serif;
+    padding: 0.5rem 1rem;
+}
+
+.latte {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid rgb(255, 81, 0);
+    margin: 1rem 0;
+    border-radius: 20px;
+}
+
+.negro {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid rgb(255, 81, 0);
+    margin: 1rem 0;
+    border-radius: 20px;
+}
+
+.capuccino {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid rgb(255, 81, 0);
+    margin: 1rem 0;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}     
+
+
+.sanguche {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid rgb(255, 81, 0);
+    margin: 1rem 0;
+    border-radius: 20px;
+}
+
+.medialunas {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid rgb(255, 81, 0);
+    margin: 1rem 0;
+    border-radius: 20px;
+}
+
+
+.formulario {
+    border: 2px solid rgb(255, 81, 0);
+    border-radius: 20px;
+
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formulario label {
+    font-family: poppins, sans-serif;
+    font-weight: 500;
+}
+
+.formulario input,
+.formulario textarea {
+    padding: 1rem;
+
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+
+    font-size: 1rem;
+    font-family: poppins, sans-serif;
+
+    outline: none;
+}
+
+.formulario textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.formulario button {
+    background-color: rgb(0, 0, 0);
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 1rem;
+
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.formulario button:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+ 
+
+footer {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.productos,
+.bienvenida,
+.perfil,
+.formulario {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease-out forwards;
+    transition: transform 0.3s ease;
+}
+
+.productos:hover,
+.bienvenida:hover,
+.perfil:hover,
+.formulario:hover {
+    transform: translateY(-5px);
+}
+
+.btn-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 81, 0);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+.btn-top:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    nav {
+        margin-left: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .perfil {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .foto img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .info {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .latte,
+    .negro,
+    .capuccino,
+    .sanguche,
+    .medialunas {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    main img {
+        width: 70%;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+}
