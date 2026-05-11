@@ -21,7 +21,7 @@ Landing page responsive para una cafetería ficticia desarrollada con HTML y CSS
 ## Instalación
 
 ```bash
-git clone https://github.com/aguswavy/cairo-coffee.git
+git clone https://github.com/agustinwavy/cairo-coffee.git
 
 
 Proyecto desarrollado por Agustin Melgar.
