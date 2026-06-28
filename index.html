@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cairo coffee</title>
     <link rel="stylesheet" href="style.css">
+    <script src="java.js" defer></script>
 </head>
 <body id="inicio">
     <header>
@@ -24,18 +25,21 @@
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
+
     </header>
 
     <main>
 
-        <section class="bienvenida">
+        <section class="bienvenida" id="bienvenida">
             <h3>Bienvenidos a Cairo Coffee</h3>
-            <p>Revisa el menu y toca en "Pedir ahora".</p>
-            <nav>
-                <ul>
-                    <li><a href="#form">Pedir ahora</a></li>
-                </ul>
-            </nav>
+        </section>
+
+        <section id="seccion-carrito" class="carrito-contenedor">
+            <ul id="lista-carrito">
+            </ul>
+            <p><strong class="total-precio">Total: $<span id="total-precio" class="total-precio">0.00</span></strong></p>
+            <button class="vaciar-carrito">Vaciar Carrito</button>
+            <button class="comprar">Comprar</button>
         </section>
 
 
@@ -49,6 +53,7 @@
                 <h3>Deacon Special</h3>
                 <p>$1499.99</p>
                 <p>Cairo Black y 2 medialunas</p>
+                <button class="btn-agregar" data-nombre="Deacon Special" data-precio="1499.99">Agregar</button>
             </div>
         </section>
 
@@ -59,54 +64,61 @@
                     <img src="cairo latte.png" alt="Cafe latte">
                     <h3>Cairo Latte</h3>
                     <p>$1499.99</p>
+                    <button class="btn-agregar" data-nombre="Cairo Latte" data-precio="1499.99">Agregar</button>
                 </div>
                 <div class="negro">
                     <img src="cairo negro.png" alt="Cafe negro">
                     <h3>Cairo Black</h3>
                     <p>$999.99</p>
+                    <button class="btn-agregar" data-nombre="Cairo Black" data-precio="999.99">Agregar</button>
                 </div>
                 <div class="capuccino">
                     <img src="cairo capuccino.png" alt="Cafe cappuccino">
                     <h3>Cairo Cappuccino</h3>
                     <p>$1999.99</p>
+                    <button class="btn-agregar" data-nombre="Cairo Cappuccino" data-precio="1999.99">Agregar</button>
                 </div>
             </div>
         </section>
-     <section id="recetas" class="productos">
+
+        <section id="recetas" class="productos">
             <h2>Recetas</h2>
             <div>
                 <div class="sanguche">
                     <img src="Sanguche.png" alt="Sanguche">
                     <h3>Sanguche</h3>
                     <p>$999.99</p>
+                    <button class="btn-agregar" data-nombre="Sanguche" data-precio="999.99">Agregar</button>
                 </div>
                 <div class="medialunas">
                     <img src="medialunas.jpg" alt="Medialunas">
                     <h3>Medialuna</h3>
                     <p>$499.99</p>
+                    <button class="btn-agregar" data-nombre="Medialuna" data-precio="499.99">Agregar</button>
                 </div>
             </div>
      </section>
+    
+    <section id="form" class="formulario">
+     <h2>Tus Datos para el Pedido</h2>
+     <form action="https://formspree.io/f/xdabboae" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
 
-        <section id="form" class="formulario">
-            <h2>Pedir ahora</h2>
-            <form
-                action="https://formspree.io/f/xdabboae"
-                method="POST"
-            >
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <label for="pago">Método de Pago:</label>
+        <select type="pago" id="pago" name="pago" required>
+            <option value="Efectivo">Efectivo (Abonar en caja)</option>
+            <option value="Transferencia">Transferencia (Abonar en caja)</option>
+        </select>
 
-                <label for="mensaje">Pedido:</label>
-                <textarea id="mensaje" name="mensaje"></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+        <textarea id="mensaje" name="mensaje" style="display: none;"></textarea>
+     </form>
+    </section>
     </main>
+
 
     <section class="reseñas">
     <h2>Reseñas</h2>
@@ -143,4 +155,6 @@
     </footer>
 
     <a href="#inicio" class="btn-top">↑</a>
+
+    
 </body>
