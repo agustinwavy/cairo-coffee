@@ -98,6 +98,7 @@ function procesarCompra() {
     const inputEmail = document.getElementById("email");
     const inputMensaje = document.getElementById("mensaje");
     const inputTotal = document.getElementById("total");
+    const selectPago = document.getElementById("pago");
 
     if (!inputNombre.value || !inputEmail.value.trim()) {
         alert("Por favor, complete todos los campos del formulario.");
@@ -119,6 +120,20 @@ function procesarCompra() {
         inputMensaje.value = mensaje;
     }
 
-    formulario.submit();
+    if (selectPago && selectPago.value==="Transferencia") {
+        const url="https://link.mercadopago.com.ar/onrosnow";
+
+        formulario.submit();
+
+        window.open(url, "_blank");
+
+        vaciarCarrito();
+    }
+
+    else {
+        formulario.submit();
+        vaciarCarrito();
+    }
+
 }
 
