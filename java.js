@@ -125,15 +125,14 @@ function procesarCompra() {
 
         formulario.submit();
 
-        vaciarCarrito();
-
         window.open(url, "_blank");
 
+        vaciarCarrito();
     }
 
     else {
-        vaciarCarrito();
         formulario.submit();
+        vaciarCarrito();
     }
 
 }
