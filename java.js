@@ -87,9 +87,22 @@ function vaciarCarrito() {
     mostrarCarrito();
 }
 
-function procesarCompra() {
+function mostrarCartel(mensaje) {
+    const cartel = document.getElementById("mi-alerta");
+    const texto = document.getElementById("alerta-mensaje");
+    const botonCerrar = document.getElementById("alerta-cerrar");
+
+    texto.textContent = mensaje;
+    cartel.showModal(); 
+
+    botonCerrar.onclick = () => {
+        cartel.close();
+    };
+}
+
+async function procesarCompra() {
     if (carrito.length ===0) {
-        alert("El carrito está vacío.");
+        mostrarCartel("El carrito está vacío.");
         return;
     }
 
@@ -101,7 +114,7 @@ function procesarCompra() {
     const selectPago = document.getElementById("pago");
 
     if (!inputNombre.value || !inputEmail.value.trim()) {
-        alert("Por favor, complete todos los campos del formulario.");
+        mostrarCartel("Por favor, complete todos los campos del formulario.");
         document.getElementById("form").scrollIntoView({ behavior: "smooth" });
         return;
     }
@@ -120,20 +133,33 @@ function procesarCompra() {
         inputMensaje.value = mensaje;
     }
 
-    if (selectPago && selectPago.value==="Transferencia") {
-        const url="https://link.mercadopago.com.ar/onrosnow";
+    const datosContenedor = new FormData(formulario);
 
-        formulario.submit();
+    try {
+        const respuesta = await fetch(formulario.action, {
+            method: formulario.method,
+            body: datosContenedor,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
 
-        window.open(url, "_blank");
+        if (respuesta.ok) {
+            mostrarCartel("¡Pedido enviado con éxito a Cairo Coffee!");
 
-        vaciarCarrito();
+            if (selectPago && selectPago.value === "Transferencia") {
+                const url = "https://link.mercadopago.com.ar/onrosnow";
+                window.open(url, "_blank");
+            }
+
+            formulario.reset();
+            vaciarCarrito();
+        } else {
+            mostrarCartel("Hubo un problema al procesar el formulario en el servidor.");
+        }
+
+    } catch (error) {
+        console.error("Error de red:", error);
+        mostrarCartel("No se pudo conectar con el servidor. Revisá tu conexión a internet.");
     }
-
-    else {
-        formulario.submit();
-        vaciarCarrito();
-    }
-
 }
-
