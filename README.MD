@@ -6,6 +6,7 @@ Landing page responsive para una cafetería ficticia desarrollada con HTML y CSS
 
 - HTML5
 - CSS3
+- JS
 - Flexbox
 - Responsive Design
 - Formspree
